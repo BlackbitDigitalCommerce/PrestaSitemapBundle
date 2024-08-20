@@ -74,7 +74,7 @@ class Utils
             $parts['host'].
             (!empty($parts['port']) ? ':'.$parts['port'] : '').
             (!empty($sanitizedPath) ? $sanitizedPath : '').
-            (!empty($parts['query']) ? '?'.$parts['query'] : '').
+            (!empty($parts['query']) ? '?'.self::encode($parts['query']) : '').
             (!empty($parts['fragment']) ? '#'.$parts['fragment'] : '');
 
         return $targetUrl;
